@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color:#fffff;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-top: 2rem;
+}
+
+#Titulo{
+  color: #00513c;
+  font-size: 50px;
+  text-align:center;
+  font-family:'Kanit', sans-serif;
+}
+
+#title-new{
+  font-size: 30px;
+  color: #fff;
+}
+
+#CuadroPrincipal{
+  width: 1000px;
+  height: auto;
+  background-color: #ccf5ea ;
+  padding: 0px;
+  display: flex; /*Se utiliza un display para ajustar el div*/
+  flex-wrap: wrap; /*Se aplica un wrap para colocar task uno debajo del otro dependiendo de la anchura del div*/
+  justify-content:space-around; /*Se justifica la ubicación de los task dejando un espacio entre ellas.*/
+  margin: 0 auto;
+  border-radius: 6px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.BordeCuadroPrincipal{
+  width: 100%;
+  height: 30px;
+  background-color:#00cb97;
+  padding:20px;
+  display: flex;
+  flex-direction:right;
+  justify-content:center;
+  align-items:center;
+  margin: 0 auto;
+  border-radius: px;
+  font-family: 'Open Sans', sans-serif; 
+}
+
+/*-------Boton de añadir-------*/
+
+.add {
+  position: fixed;
+  width: 70px;
+  height:50px;
+  top: 25px;
+  right: 20px;
+  background-color: #cb0034;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.add:active {
+  transform: scale(0.98);
+}
+
+.note {
+  background-color:#e43e4d;
+  box-shadow: 0 0 10px 4px rgba(5, 5, 0, 0.1);
+  margin: 30px 20px;
+  height: 200px;
+  width: 200px;
+  overflow-y: scroll;/*no me gusta*/
+}
+
+.note .tools {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.note .tools button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 0.5rem;
+}
+
+.note textarea {
+  outline: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  height: 162px;
+  width: 100%;
+  padding: 20px;
+}
+
+.main {
+  padding: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*---------color switcher-------*/
+
+.color-switcher{
+  position: fixed;
+  top: 80px;  right: -200px;
+  width: 150px;
+  padding: 10px;
+  background:#cb0034;
+  z-index: 1000; 
+}
+
+/*-----Color-switcher Active-----*/
+ .color-switcher.active{
+  right: 20px;  
+}
+
+.color-switcher  h3{
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #3333;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.color-switcher .switcher-btn{
+  position: absolute;
+  /*position: fixed;*/
+  top: 0px ;  left: -140px;
+  color: #fff;
+  background: #cb0034;
+  padding: 10px  20px;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+
+.color-switcher  .botonTemasContainer{
+  diaplay: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+.color-switcher  .botonTemasContainer  .botonTemas{
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer; 
+}
+
+.botonTemasContainer{
+  display: flex;
+}
+
+/*----------------Boton de darkmode---------*/
+.btn{
+  background-color: #000000;
+  width: 6em;
+  height: 3em;
+  border-radius: 10em;
+  padding: 0 0.5em;
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  left: 50px; 
+}
+
+.indicadorBoton{
+  background-color:#fff;
+  width:2.5em;
+  height:2.5em;
+  border-radius: 60px;
+  position: absolute;
+  transition: transform  .5s ease;
+}
+
+/*-------------Darkmode-----------*/
+.darkmode{
+  background-color:#000000;  
+}
+
+.darkmode  .btn{
+  background-color: #fff;  
+}
+
+.darkmode .indicadorBoton{ 
+  transform: translateX(2.7em);
+  background-color: #111b62;
+  transition: transform  .5s ease;
+}
+
+.darkmode .add{
+  background-color:#111b62;
+}
+
+.darkmode .BordeCuadroPrincipal{
+  background-color:#212934; 
+}
+
+.darkmode #CuadroPrincipal{
+  background-color: #2a4760 ;
+}
+
+.darkmode .color-switcher{
+  background: #111b62;
+}
+
+.darkmode .color-switcher .switcher-btn{
+  background: #111b62; 
+}
+
+
+.darkmode .note {
+  background-color:#c4e4dc;
+}
+
+.darkmode .note .tools button {
+  color: #091413;
+}
+
+.darkmode #Titulo{
+  color: #bcc4d4;
+}
+
+
+
+/*----Fondo-----*/
+.container{
+  position: absolute;
+  width: 100%;
+  height: 200vh;
+  overflow: hidden;
+}
+
+.buble{
+  position: relative;
+  display: flex;
+  
+}
+
+.buble span{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #FEF079;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #FEF4A2,
+    0 0 50px #FEF079,
+    0 0 100px #FEF079;
+  animation: animate 15s linear infinite;
+  animation-duration: calc( 125s / var(--i));  
+}
+
+.buble span:nth-child(even){
+  background: #7EFCE4;
+  box-shadow: 0 0 0 10px #A2FFED,
+    0 0 50px #7EFCE4,
+    0 0 100px #7EFCE4;
+}
+
+@keyframes animate{
+  0%{
+      transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
+}
