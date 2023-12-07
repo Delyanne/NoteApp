@@ -12,9 +12,10 @@ addBtn.addEventListener('click', () => addNewNote())
 const mainDiv = document.getElementById('CuadroPrincipal')
 
 function addNewNote(text = '') {
+     // Crea un nuevo elemento div y le agrega la clase 'note'
     const note = document.createElement('div')
     note.classList.add('note')
-
+// Configura el contenido HTML del elemento 'note
     note.innerHTML = `
     <div class="tools">
         <button class="edit"><i class="fas fa-edit"></i></button>
@@ -31,7 +32,7 @@ function addNewNote(text = '') {
     const textArea = note.querySelector('textarea')
 
     textArea.value = text
-    main.innerHTML = marked(text)
+    main.innerHTML = marked(text)//Utiliza la biblioteca marked para convertir el contenido del textarea 
 
     deleteBtn.addEventListener('click', () => {
         note.remove()
@@ -58,10 +59,10 @@ function addNewNote(text = '') {
 
 function updateLS() {
     const notesText = document.querySelectorAll('textarea')
-
+ // Selecciona todos los elementos textarea en la página
     const notes = []
 
-    notesText.forEach(note => notes.push(note.value))
+    notesText.forEach(note => notes.push(note.value)) // Agrega el valor (contenido) de cada textarea al array 'notes'
 
     localStorage.setItem('notes', JSON.stringify(notes))
 }
