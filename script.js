@@ -70,12 +70,10 @@ function updateLS() {
 const body = document.querySelector('body');
 const btn = document.querySelector('.btn');
 
-
 btn.addEventListener('click', () => {
   
     body.classList.toggle('darkmode');
- 
-    
+
   setTimeout(() => {
     icon.classList.remove('animated');
     
@@ -83,27 +81,16 @@ btn.addEventListener('click', () => {
 })
 
 /*-----------Color switcher notes------*/
-
-
-
-
-
 document.querySelector('.switcher-btn').onclick = () =>{
    document.querySelector('.color-switcher').classList.toggle('active');
-}
-
-/*  :)   */
-       
-let themeButtons = document.querySelectorAll('.botonTemas');
-      
+}   
+let themeButtons = document.querySelectorAll('.botonTemas');  
 themeButtons.forEach(color =>{
     color.addEventListener('click',  () =>{
         let dataColor =  color.getAttribute('data-color');
         let notes = document.querySelectorAll('.note');
         notes.forEach(note =>{
             note.style.setProperty('background-color', dataColor);
-        });
-      
-    });
-     
+        });     
+    });  
 });
